@@ -25,65 +25,71 @@ class TestMaximumTest {
 //Test Cases for Maximum in Integers
 	@Test
 	public void testMaximumWhenMaximumIsAtFirstPosition() {
-		int test = testMax.max(a, b, c);
+		int test = testMax.maxGeneric(a, b, c);
 		assertEquals(6, test);
 	}
 
 	@Test
 	public void testMaximumWhenMaximumIsAtSecondPosition() {
-		int test = testMax.max(b, a, c);
+		int test = testMax.maxGeneric(b, a, c);
 		assertEquals(6, test);
 	}
 
 	@Test
 	public void testMaximumWhenMaximumIsAtThirdPosition() {
-		int test = testMax.max(b, c, a);
+		int test = testMax.maxGeneric(b, c, a);
 		assertEquals(6, test);
 	}
 
 //Test Cases for Maximum in Float
 	@Test
 	public void testMaximumFloatWhenMaximumIsAtFirstPosition() {
-		float test = testMax.max(z, x, y);
+		float test = testMax.maxGeneric(z, x, y);
 		assertEquals(8, test);
 	}
 
 	@Test
 	public void testMaximumFloatWhenMaximumIsAtSecondPosition() {
-		float test = testMax.max(y, z, x);
+		float test = testMax.maxGeneric(y, z, x);
 		assertEquals(8, test);
 	}
 
 	@Test
 	public void testMaximumFloatWhenMaximumIsAtThirdPosition() {
-		float test = testMax.max(x, y, z);
+		float test = testMax.maxGeneric(x, y, z);
 		assertEquals(8, test);
 	}
 
 //Test Cases for Maximum length of String
 	@Test
 	public void testMaximumStringWhenMaximumIsAtFirstPosition() {
-		int test = testMax.max(o, n, m);
-		assertEquals(o.length(), test);
+		String test = testMax.maxGeneric(o, n, m);
+		assertEquals(n, test);
 	}
 
 	@Test
 	public void testMaximumStringWhenMaximumIsAtSecondPosition() {
-		int test = testMax.max(n, o, m);
-		assertEquals(o.length(), test);
+		String test = testMax.maxGeneric("vinay","chandu","harika");
+		assertEquals("vinay", test);
 	}
 
 	@Test
 	public void testMaximumStringWhenMaximumIsAtThirdPosition() {
-		int test = testMax.max(n, m, o);
-		assertEquals(o.length(), test);
+		String test = testMax.maxGeneric("Apple","Peach","Banana");
+		assertEquals("Peach", test);
 	}
 
 //Test Cases for Generics
 	@Test
 	public void GenericstestMaximumWhenMaximumIsAtFirstPosition() {
-		int test = testMax.max(a, b, c);
+		int test = testMax.maxGeneric(6,5,4);
 		assertEquals(6, test);
-	}
+ 	}
+	
+	@Test
+	public void GenericstestMaximumWhenMaximumIsAtFirstPosition2() {
+		TestMaximum testMaxNew = new TestMaximum("Vinay","Harika","Chndu");
+		assertEquals("Vinay", testMaxNew.maxGeneric());
+ 	}
 
 }

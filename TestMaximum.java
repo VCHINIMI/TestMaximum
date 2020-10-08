@@ -1,6 +1,22 @@
 package com.vinay.TestMaximum;
 
-public class TestMaximum {
+public class TestMaximum<T extends Comparable<T>> {
+	T genericE;
+	T genericF;
+	T genericG;
+
+//	Constructor	
+	public TestMaximum(T genericE, T genericF, T genericG) {
+		super();
+		this.genericE = genericE;
+		this.genericF = genericF;
+		this.genericG = genericG;
+	}
+
+//Empty Constructor for already defined test cases	
+	public TestMaximum() {
+	}
+
 //	Max Integer Function	
 	public static Integer max(Integer x, Integer y, Integer z) {
 		int maxInteger = x;
@@ -31,8 +47,13 @@ public class TestMaximum {
 		return maxStringLength;
 	}
 
+//	TestMaximum method calling static maxGeneric method
+	public T maxGeneric() {
+		return maxGeneric(this.genericG, this.genericE, this.genericF);
+	}
+
 //Generic Function 
-	public static <T extends Comparable<T>> T max(T a, T b, T c) {
+	public static <T extends Comparable<T>> T maxGeneric(T a, T b, T c) {
 		T max = a;
 		if (b.compareTo(max) > 0)
 			max = b;
@@ -40,4 +61,5 @@ public class TestMaximum {
 			max = c;
 		return max;
 	}
+
 }
