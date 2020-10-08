@@ -69,27 +69,34 @@ class TestMaximumTest {
 
 	@Test
 	public void testMaximumStringWhenMaximumIsAtSecondPosition() {
-		String test = testMax.maxGeneric("vinay","chandu","harika");
+		String test = testMax.maxGeneric("vinay", "chandu", "harika");
 		assertEquals("vinay", test);
 	}
 
 	@Test
 	public void testMaximumStringWhenMaximumIsAtThirdPosition() {
-		String test = testMax.maxGeneric("Apple","Peach","Banana");
+		String test = testMax.maxGeneric("Apple", "Peach", "Banana");
 		assertEquals("Peach", test);
 	}
 
 //Test Cases for Generics
 	@Test
 	public void GenericstestMaximumWhenMaximumIsAtFirstPosition() {
-		int test = testMax.maxGeneric(6,5,4);
+		int test = testMax.maxGeneric(6, 5, 4);
 		assertEquals(6, test);
- 	}
-	
+	}
+
 	@Test
 	public void GenericstestMaximumWhenMaximumIsAtFirstPosition2() {
-		TestMaximum testMaxNew = new TestMaximum("Vinay","Harika","Chndu");
+		TestMaximum testMaxNew = new TestMaximum("Vinay", "Harika", "Chndu");
 		assertEquals("Vinay", testMaxNew.maxGeneric());
- 	}
+	}
+
+//Test Case for Generic function with more than 3 parameters	
+	@Test
+	public void GenericstestMaximumWhenMaximumIsAtFirstPositionwithMoreThan3inputs() {
+		int test = testMax.maxGeneric(6, 5, 4, 9, 8, 1);
+		assertEquals(9, test);
+	}
 
 }

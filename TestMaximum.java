@@ -51,7 +51,7 @@ public class TestMaximum<T extends Comparable<T>> {
 	public T maxGeneric() {
 		return maxGeneric(this.genericG, this.genericE, this.genericF);
 	}
-
+/*
 //Generic Function 
 	public static <T extends Comparable<T>> T maxGeneric(T a, T b, T c) {
 		T max = a;
@@ -61,5 +61,16 @@ public class TestMaximum<T extends Comparable<T>> {
 			max = c;
 		return max;
 	}
+*/	
+	 public static <T extends Comparable<T>> T maxGeneric(T... elements) {
+	    T max = elements[0];
+	    for (T element : elements) {
+	    	
+	    	if (element.compareTo(max) > 0) {
+		            max = element;
+		        }
+		    }
+		    return max;
+		}
 
 }
